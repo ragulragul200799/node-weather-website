@@ -4,6 +4,7 @@ const path = require( 'path' );
 const hbs = require( "hbs" );
 const geocode = require( "./utils/geocode" );
 const weatherStack = require( "./utils/weather" );
+const port = process.env.PORT || 3000;
 
 
 const publicDirectoryPath = path.join( __dirname, '../public' );
@@ -95,7 +96,7 @@ app.get( "*", (req,res) =>
 })
 
 
-app.listen( 3000, () =>
+app.listen( port, () =>
 {
-    console.log("This is th server in the port 3000")
+    console.log(`This is th server in the port ${port}`)
 } )
