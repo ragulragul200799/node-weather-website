@@ -19,10 +19,14 @@ const weatherStack = ({latitude,longitude},callback) =>
         const currentWather = respose.body.current;
         const temp = currentWather.temperature;
         const likelytemp = currentWather.feelslike;
+        const weather_desc = currentWather.weather_descriptions[ 0 ]
+        const local_time = respose.body.location.localtime;
         callback( undefined, res = {
             temp,
             likelytemp,
-            currentWather
+            currentWather,
+            weather_desc,
+            local_time
         })
     }
 })

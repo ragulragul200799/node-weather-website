@@ -21,11 +21,8 @@ weather.addEventListener( 'submit', (e) =>
         }
         else
         {
-            console.log( data.temp );
-            console.log( data.likelytemp );
-            console.log( data.placeName );
-            msg_1.textContent = data.placeName
-            msg_2.textContent = `The place has ${data.temp} degree`
+            msg_1.textContent = data.placeName + `   Current time : ${data.local_time}`;
+            msg_2.textContent = `The place has ${data.weather_desc} with temperature of ${data.temp} `
         }
     } )
  )

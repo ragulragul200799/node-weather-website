@@ -61,15 +61,15 @@ app.get( "/weather", ( req, res ) =>
             return res.send( { err } );
         }
 
-        weatherStack( {latitude,longitude}, ( err, { temp , likelytemp}={}) =>
+        weatherStack( {latitude,longitude}, ( err, { temp , likelytemp,weather_desc,local_time}={}) =>
         {
             if ( err )
             {
                 res.send( { err } );
             }
             else
-            {   
-                res.send( { placeName, temp, likelytemp } );
+            {
+                res.send( { placeName, temp, likelytemp,weather_desc, local_time } );
             }
         } )
     
